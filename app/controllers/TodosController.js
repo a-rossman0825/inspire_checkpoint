@@ -22,7 +22,11 @@ export class TodosController {
 
   changeArrow() {
     const arrowElm = document.getElementById('arrow');
-    
+    if (arrowElm.classList.contains('mdi-arrow-left-drop-circle-outline')) {
+      arrowElm.classList.replace('mdi-arrow-left-drop-circle-outline', 'mdi-arrow-right-drop-circle-outline')
+    } else {
+      arrowElm.classList.replace('mdi-arrow-right-drop-circle-outline', 'mdi-arrow-left-drop-circle-outline')
+    }
   }
 
   async drawTodos() {
