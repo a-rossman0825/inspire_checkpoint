@@ -7,6 +7,7 @@ export class TodosController {
   constructor() {
     console.log("🗒️🎛️ Ready!");
     AppState.on("identity", this.getTodos);
+    AppState.on("todos", this.drawTodos);
   }
 
   async getTodos() {
@@ -17,5 +18,15 @@ export class TodosController {
       console.error("🗒️🎛️ getTodos failed", error);
     }
   }
+
+  async drawTodos() {
+    const todos = AppState.todos;
+    let todosContent = '';
+    todos.forEach((todo) => todosContent += todo.todoListHTMLTemplate);
+    const todoElm = document.getElementById('todo-list');
+    todoElm.innerHTML = todosContent;
+    console.log('drewTodos!');
+  }
+
 
 }

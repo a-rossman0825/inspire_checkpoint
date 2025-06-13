@@ -12,10 +12,10 @@ export class Todo {
     return `
       <div class="text-start d-flex justify-content-around align-content-center">
         <div class="col-1 form-check">
-          <input class="form-check-input" type="checkbox" value="${this.completed}" id="completed"/>
+          <input class="form-check-input" type="checkbox" value="${this.completed}" onclick="" id="completed"/>
         </div>
-        <p class="col-9 small">${this.description}</p>
-        <p class="col-1 text-start"><i class="fs-5 mdi mdi-trash-can" onclick=""></i></p>
+        <p class="col-9 small text-light">${this.description}</p>
+        <p class="col-1 text-start"><i class="fs-5 mdi mdi-trash-can text-light" onclick=""></i></p>
       </div>
     `
   }
