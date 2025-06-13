@@ -12,14 +12,15 @@
   <title>inspire_checkpoint</title>
 </head>
 
-<body data-bs-theme="light">
+<body data-bs-theme="light" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-position: center;">
   
   <header>
     <div class="container-fluid">
       <!-- SECTION HEADER DISPLAY  -->
       <div class="row mt-5 justify-content-end">
         <div class="col-6 col-md-4 col-lg-3 col-xl-2 align-content-center pe-4">
-          <div class="badge bg-secondary text-light rounded-pill d-flex justify-content-between align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <!-- TODO onclick="turn arrow down func()" -->
+          <div class="badge badges text-light rounded-pill d-flex justify-content-between align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" onclick="">
             <div class="col-3 text-start ps-2">
               <i class="mdi mdi-arrow-right-drop-circle-outline fs-4"></i>
             </div>
@@ -34,12 +35,12 @@
       <!-- SECTION OFFCANVAS -->
         <div class="row">
           <div class="col-3">
-            <div class="offcanvas offcanvas-end rounded" style=" margin-top: 100px; height: 250px; width: 16vw;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas offcanvas-end rounded badges" style=" margin-top: 100px; height: 250px; width: 16vw;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
               <div class="offcanvas-header">
                 <form onsubmit="">
                   <div class="row d-flex justify-content-between">
                     <textarea class="col-8 col-sm-9 rounded" name="title" id="todo-create" placeholder="add todo..." rows="1"></textarea>
-                    <button class="col-1 col-md-3 text-start rounded pe-3" type="submit"><i class="mdi mdi-plus-thick small text-center"></i></button>
+                    <button class="col-1 col-md-3 text-start rounded pe-3 add-todo-btn" type="submit"><i class="mdi mdi-plus-thick small text-center"></i></button>
                   </div>
                 </form>
               </div>

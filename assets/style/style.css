@@ -12,6 +12,29 @@ main {
   align-items: center;
 }
 
+.badges {
+  background-color: rgba(0, 0, 0, 0.223);
+  backdrop-filter: blur(10px);
+  transition: all.2s 0s ease;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+}
+
+.add-todo-btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: whitesmoke;
+  box-shadow: none !important;
+  border: solid whitesmoke;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+/* Media Queries for offCanvas position/width*/
+
 @media (max-width: 425px) {
 
   .offcanvas {
