@@ -12,7 +12,6 @@ class TodosService {
     AppState.todos = todos;
   }
 
-
 }
 
 export const todosService = new TodosService();

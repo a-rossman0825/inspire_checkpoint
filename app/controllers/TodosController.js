@@ -8,6 +8,7 @@ export class TodosController {
     console.log("🗒️🎛️ Ready!");
     AppState.on("identity", this.getTodos);
     AppState.on("todos", this.drawTodos);
+    AppState.on("todos", this.drawTodoCount);
   }
 
   async getTodos() {
@@ -19,13 +20,29 @@ export class TodosController {
     }
   }
 
+  changeArrow() {
+    const arrowElm = document.getElementById('arrow');
+    
+  }
+
   async drawTodos() {
     const todos = AppState.todos;
-    let todosContent = '';
-    todos.forEach((todo) => todosContent += todo.todoListHTMLTemplate);
+    let content = '';
+    todos.forEach((todo) => content += todo.todoListHTMLTemplate);
     const todoElm = document.getElementById('todo-list');
-    todoElm.innerHTML = todosContent;
+    todoElm.innerHTML = content;
     console.log('drewTodos!');
+  }
+
+  drawTodoCount() {
+    const todosCount = AppState.todos.filter((todo) => todo.completed == false);
+    let content = todosCount.length.toString();
+    const todosCountElm = document.getElementById('todos-count');
+    if (todosCount.length !== 1) {
+      todosCountElm.innerText = `${content} Todos Remaining`;
+    } else {
+      todosCountElm.innerText = `${content} Todo Remaining`;
+    }
   }
 
 
