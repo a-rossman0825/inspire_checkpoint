@@ -37,9 +37,9 @@
           <div class="col-3">
             <div class="offcanvas offcanvas-end rounded badges" style=" margin-top: 100px; height: 250px; width: 16vw;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-bs-backdrop="false">
               <div class="offcanvas-header">
-                <form onsubmit="">
+                <form onsubmit="app.todosController.addTodo()">
                   <div class="row d-flex justify-content-between">
-                    <textarea class="col-8 col-sm-9 rounded" name="title" id="todo-create" placeholder="add todo..." rows="1"></textarea>
+                    <textarea class="col-8 col-sm-9 rounded" name="description" id="todo-create" placeholder="add todo..." rows="1"></textarea>
                     <button class="col-1 col-md-3 text-start rounded pe-3 add-todo-btn" type="submit"><i class="mdi mdi-plus-thick small text-center"></i></button>
                   </div>
                 </form>

@@ -5,18 +5,19 @@ export class Todo {
 
     this.id = data.id;
     this.description = data.description;
-    this.completed = data.completed;
+    this.completed = data.completed || false;
   }
 
-  get todoListHTMLTemplate() {
+  get todoListHTMLTemp() {
     return `
       <div class="text-start d-flex justify-content-around align-content-center">
         <div class="col-1 form-check">
-          <input class="form-check-input" type="checkbox" value="${this.completed}" onclick="" id="completed"/>
+          <input class="form-check-input" type="checkbox" value="" onchange="app.todosController.changeBoolean('${this.id}')" ${this.completed ? 'checked' : ''}/>
         </div>
-        <p class="col-9 small text-light">${this.description}</p>
-        <p class="col-1 text-start"><i class="fs-5 mdi mdi-trash-can text-light" onclick=""></i></p>
+        <p class="col-9 small text-light ${this.completed ? 'text-decoration-line-through' : ''}">${this.description}</p>
+        <p class="col-1 text-start"><i class="fs-5 mdi mdi-trash-can text-light"></i></p>
       </div>
     `
   }
+
 }

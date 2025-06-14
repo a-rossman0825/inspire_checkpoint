@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { todosService } from "../services/TodosService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 
 
@@ -7,6 +8,7 @@ export class TodosController {
   constructor() {
     console.log("🗒️🎛️ Ready!");
     AppState.on("identity", this.getTodos);
+    AppState.on('completedTodo', this.getTodos);
     AppState.on("todos", this.drawTodos);
     AppState.on("todos", this.drawTodoCount);
   }
@@ -29,12 +31,26 @@ export class TodosController {
     }
   }
 
+  changeBoolean(todoId) {
+    console.log();
+    
+    todosService.changeBoolean(todoId);
+  }
+
   async drawTodos() {
     const todos = AppState.todos;
     let content = '';
-    todos.forEach((todo) => content += todo.todoListHTMLTemplate);
     const todoElm = document.getElementById('todo-list');
+    todos.forEach((todo) => {
+      if (todo.completed == true) {
+        content += todo.todoListHTMLTemp;
+
+      } else {
+        content += todo.todoListHTMLTemp;
+      }
     todoElm.innerHTML = content;
+    })
+    // content += todo.todoListHTMLTemplate);
     console.log('drewTodos!');
   }
 
@@ -46,6 +62,21 @@ export class TodosController {
       todosCountElm.innerText = `${content} Todos Remaining`;
     } else {
       todosCountElm.innerText = `${content} Todo Remaining`;
+    }
+  }
+
+  async addTodo() {
+    try {
+      event.preventDefault();
+      const formElm = event.target;
+      const formData = getFormData(formElm);
+      console.log('🗒️🎛️ added Todo Form', formData);
+      await todosService.addTodos(formData);
+      // @ts-ignore
+      document.getElementById('todo-create').value = '';
+    } catch (error) {
+      Pop.error(error, "Failure:", "Could not add Todo");
+      console.error("🗒️🎛️ addTodos failed", error);
     }
   }
 
