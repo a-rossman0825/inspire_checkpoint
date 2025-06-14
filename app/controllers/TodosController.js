@@ -9,8 +9,8 @@ export class TodosController {
     console.log("🗒️🎛️ Ready!");
     AppState.on("identity", this.getTodos);
     AppState.on('completedTodo', this.getTodos);
-    AppState.on("todos", this.drawTodos);
-    AppState.on("todos", this.drawTodoCount);
+    AppState.on("todos", this.drawTodos.bind(this));
+    AppState.on("todos", this.drawTodoCount.bind(this));
   }
 
   async getTodos() {
@@ -42,15 +42,9 @@ export class TodosController {
     let content = '';
     const todoElm = document.getElementById('todo-list');
     todos.forEach((todo) => {
-      if (todo.completed == true) {
-        content += todo.todoListHTMLTemp;
-
-      } else {
-        content += todo.todoListHTMLTemp;
-      }
-    todoElm.innerHTML = content;
+      content += todo.todoListHTMLTemp;
     })
-    // content += todo.todoListHTMLTemplate);
+    todoElm.innerHTML = content;
     console.log('drewTodos!');
   }
 
@@ -77,6 +71,22 @@ export class TodosController {
     } catch (error) {
       Pop.error(error, "Failure:", "Could not add Todo");
       console.error("🗒️🎛️ addTodos failed", error);
+    }
+  }
+
+  async confirmTodoDelete(todoId) {
+    const confirm = await Pop.confirm('Are you sure you want to delete this todo??', 'It will be expelled out into the void, forever!', 'Yeah, delete it!', 'No, actually I still need to do this thing');
+
+    if (!confirm) {
+      return
+    }
+
+    try {
+      console.log('🗒️🎛️🗑️Deleting Todo!', todoId);
+      await todosService.deleteTodo(todoId);
+    } catch (error) {
+      Pop.error(error, "Failure:", "Could not delete Todo");
+      console.error("🗒️🎛️🗑️ deleteTodos failed", error);
     }
   }
 

@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js";
 
 
 export class Todo {
@@ -15,7 +16,7 @@ export class Todo {
           <input class="form-check-input" type="checkbox" value="" onchange="app.todosController.changeBoolean('${this.id}')" ${this.completed ? 'checked' : ''}/>
         </div>
         <p class="col-9 small text-light ${this.completed ? 'text-decoration-line-through' : ''}">${this.description}</p>
-        <p class="col-1 text-start"><i class="fs-5 mdi mdi-trash-can text-light"></i></p>
+        <p class="col-1 text-start" onclick="app.todosController.confirmTodoDelete('${this.id}')"><i class="fs-5 mdi mdi-trash-can text-light"></i></p>
       </div>
     `
   }

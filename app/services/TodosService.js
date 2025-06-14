@@ -33,6 +33,14 @@ class TodosService {
 
   }
 
+  async deleteTodo(todoId) {
+    const res = await api.delete(`api/todos/${todoId}`);
+    console.log('🗒️🦮🗑️ DELETED TODO', res.data);
+    const todos = AppState.todos;
+    const todoI = todos.findIndex((todo) => todo.id == todoId);
+    todos.splice(todoI, 1);
+  }
+
 }
 
 export const todosService = new TodosService();
