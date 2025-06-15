@@ -15,7 +15,7 @@
 <body data-bs-theme="light" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-position: center;">
   
   <header>
-    <div class="container-fluid main-ui d-none">
+    <div id="app-header" class="container-fluid">
       <!-- SECTION HEADER DISPLAY  -->
       <div class="row mt-5 justify-content-between">
         <!-- STUB PHOTOGRATHER NAME -->
@@ -70,7 +70,7 @@
     </div>
   </header>
   <!-- SECTION QUOTE -->
-  <main class="position-relative main-ui d-none" style="min-height: 60vh;">
+  <main id="app-main" class="position-relative" style="min-height: 60vh;">
     <div class="position-absolute bottom-0 w-75 mb-5">
       <div class="container">
         <div id="quote" class="row text-light justify-content-end text-center quote">
@@ -87,11 +87,58 @@
     </div>
   </main>
   <!-- SECTION SETTINGS CARD -->
-  <section class="container settings-container position-relative"> 
-    <div class="row settings-row">
-      <div class="bg-secondary settings-box">
-        <div class="user-image">
-          
+  <section id="settings" class="bg-overlay d-none">
+    <div class="container settings-container position-relative z-3"> 
+      <div class="row settings-row">
+        <div class="settings-box">
+          <div class="user-image">
+            <img src="https://plus.unsplash.com/premium_photo-1664391638709-d04687a181ed?q=80&w=1942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Anthony R" class="img-fluid rounded-circle settings-img">
+          </div>
+          <div class="settings-text row justify-content-center text-center mt-3">
+            <div class="col-12 fs-2 text-light">
+              Bonjour, Anthony
+            </div>
+            <div class="col-8 badge rounded bg-light text-black mt-3 text-start py-1">
+              <i class="mdi mdi-map-marker"></i> Boise, ID
+            </div>
+            <div class="col-8 badge rounded bg-light text-black mt-2 text-start py-1">
+              <i class="mdi mdi-comment-quote"></i> Indira Gandhi
+            </div>
+            <div class="col-8 badge rounded bg-light text-black mt-2 text-start py-1">
+              <i class="mdi mdi-panorama-variant"></i> Forests, Mountains, Woods
+            </div>
+            <div class="col-md-8 mt-2">
+              <div class="row">
+                <div class="col-6">
+                  <div class="badge bg-light fs-3 rounded badge-hover py-1" onclick="app.clockController.changeTime('standard')">
+                    <i class="mdi mdi-clock"></i> 12
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="badge bg-light fs-3 rounded badge-hover py-1 " onclick="app.clockController.changeTime('military')">
+                    <i class="mdi mdi-clock"></i> 24
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 mt-2 mb-4">
+              <div class="row">
+                <div class="col-6">
+                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeather('c')">
+                    <i class="mdi mdi-temperature-celsius"></i>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeather('f')">
+                    <i class="mdi mdi-temperature-fahrenheit"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 badge bg-light rounded badge-hover fs-4" onclick="app.settingsController.toggleUI()">
+              Exit <i class="mdi mdi-undo-variant"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -99,14 +146,14 @@
   <!-- !SECTION -->
 
   <!-- SECTION BOTTOM UI -->
-  <footer class="container rounded-pill badges mb-5 text-light main-ui">
-    <div class="row py-2 px-4 align-items-center justify-content-between">
+  <footer id="app-footer" class="container rounded-pill badges mb-5 text-light">
+    <div class="row py-2 px-4 align-items-center justify-content-between badge-hover" onclick="app.settingsController.toggleSettings()">
       <!-- TODO WEATHER BADGE/STUB -->
       <div class="col-3 col-md-2 col-xl-1 ms-md-3 badge bg-black border border-light rounded">
         <div id="weather" class="row align-items-center">
           <!-- STUB FOR WEATHER BADGE -->
           <div class="col-6">
-            <p id="temperature" class="mb-1 pt-1">26&deg;C</p>
+            <p class="mb-1 pt-1" onclick="app.weatherController.changeWeather()">26&deg;<span id="temperature">C</span></p>
             <p class="mb-0 pb-1">Cloudy</p>
           </div>
           <div class="col-6">
@@ -115,7 +162,7 @@
         </div>
       </div>
       <!-- TODO CLOCK BADGE/STUB -->
-      <div class="col-5 text-end ms-md-5 ms-xl-0">
+      <div class="col-5 text-end ms-md-5 ms-xl-0 badge-hover">
         <!-- STUB CLOCK -->
         <h1 id="clock" class="display-4 fw-bolder clock">09:28am</h1>
       </div>

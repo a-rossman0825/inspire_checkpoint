@@ -52,13 +52,33 @@ main {
 
 .settings-box {
   width: 40dvw;
-  height: 40dvh;
+  height: 50dvh;
   border-radius: 30px;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.223);
+  backdrop-filter: blur(10px);
+  transition: all.2s 0s ease;
 }
 
+.settings-img {
+  position: fixed; 
+  width: 20dvh; 
+  height: 20dvh; 
+  top: -5%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.settings-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.badge-hover:hover {
+  cursor: pointer;
+}
 
 /* Media Queries for offCanvas position/width*/
 
