@@ -16,8 +16,12 @@ class ObservableAppState extends EventEmitter {
   greetingsArr = ['Bonjour', 'Hola', 'GutenTag', 'Ciao', 'Hey There', 'Ni Hao', 'Konnichiwa', 'Marhaban'];
   greetingIndex = 0;
 
+  temp = 0;
+
   temperatureSet = 'c';
   clockSet = 'standard';
+
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

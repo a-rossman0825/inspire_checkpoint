@@ -124,12 +124,12 @@
             <div class="col-md-8 mt-2 mb-4">
               <div class="row">
                 <div class="col-6">
-                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeather('c')">
+                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeatherSet('c')">
                     <i class="mdi mdi-temperature-celsius"></i>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeather('f')">
+                  <div class="badge bg-light fs-2 rounded badge-hover" onclick="app.weatherController.changeWeatherSet('f')">
                     <i class="mdi mdi-temperature-fahrenheit"></i>
                   </div>
                 </div>
@@ -153,7 +153,7 @@
         <div id="weather" class="row align-items-center">
           <!-- STUB FOR WEATHER BADGE -->
           <div class="col-6">
-            <p class="mb-1 pt-1" onclick="app.weatherController.changeWeather()">26&deg;<span id="temperature">C</span></p>
+            <p id="temperature" class="mb-1 pt-1" onclick="app.weatherController.changeWeather()">26&deg;C</span></p>
             <p class="mb-0 pb-1">Cloudy</p>
           </div>
           <div class="col-6">
