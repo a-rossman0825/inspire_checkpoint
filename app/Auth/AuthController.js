@@ -66,12 +66,22 @@ function authButton(user) {
 }
 
 function avatarTemplate(account) {
+  const languages = AppState.greetingsArr;
+  const languageIndex = Math.floor(Math.random() * languages.length);
+  let newLanguage = languages[languageIndex];
   return account
+  
     ? /* html */ `
-      <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
-        <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
-        <span class="mx-1">${account.nickname || account.name}</span>
-      </a>`
+      <div id="greeting" class="col-12">
+        <p class="mb-0">${newLanguage}</p>
+        <p class="mb-0">${account.nickname || account.name}</p>
+      </div>
+      <div>
+        <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
+          <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
+          <!-- <span class="mx-1">${account.nickname || account.name}</span> -->
+        </a>
+      </div>`
     : AuthService.loading
       ? /* html */ `
       <div style="width: 20ch" class="d-flex text-light gap-2 align-items-center placeholder-glow">

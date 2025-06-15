@@ -6,7 +6,7 @@ import { Pop } from "../utils/Pop.js";
 
 export class TodosController {
   constructor() {
-    console.log("🗒️🎛️ Ready!");
+    // console.log("🗒️🎛️ Ready!");
     AppState.on("identity", this.getTodos);
     AppState.on('completedTodo', this.getTodos);
     AppState.on("todos", this.drawTodos.bind(this));
@@ -45,7 +45,7 @@ export class TodosController {
       content += todo.todoListHTMLTemp;
     })
     todoElm.innerHTML = content;
-    console.log('drewTodos!');
+    // console.log('drewTodos!');
   }
 
   drawTodoCount() {
@@ -64,7 +64,7 @@ export class TodosController {
       event.preventDefault();
       const formElm = event.target;
       const formData = getFormData(formElm);
-      console.log('🗒️🎛️ added Todo Form', formData);
+      // console.log('🗒️🎛️ added Todo Form', formData);
       await todosService.addTodos(formData);
       // @ts-ignore
       document.getElementById('todo-create').value = '';
@@ -82,7 +82,7 @@ export class TodosController {
     }
 
     try {
-      console.log('🗒️🎛️🗑️Deleting Todo!', todoId);
+      // console.log('🗒️🎛️🗑️Deleting Todo!', todoId);
       await todosService.deleteTodo(todoId);
     } catch (error) {
       Pop.error(error, "Failure:", "Could not delete Todo");

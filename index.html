@@ -15,16 +15,21 @@
 <body data-bs-theme="light" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-position: center;">
   
   <header>
-    <div class="container-fluid">
+    <div class="container-fluid main-ui d-none">
       <!-- SECTION HEADER DISPLAY  -->
-      <div class="row mt-5 justify-content-end">
+      <div class="row mt-5 justify-content-between">
+        <!-- STUB PHOTOGRATHER NAME -->
+        <div class="col-6 text-start text-light">
+          <p class="mb-1">Image By: </p>
+          <p>Artist Name</p>
+        </div>
         <div class="col-6 col-md-4 col-lg-3 col-xl-2 align-content-center pe-4">
-          <!-- TODO onclick="turn arrow down func()" -->
+          <!-- TODO onclick="turn arrow down func()" ✅ -->
           <div class="badge badges text-light rounded-pill d-flex justify-content-between align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" onclick="app.todosController.changeArrow()">
             <div class="col-3 text-start ps-2">
               <i id="arrow" class="mdi mdi-arrow-left-drop-circle-outline fs-4"></i>
             </div>
-            <!-- TODO .innerText Func todos remaing # -->
+            <!-- TODO .innerText Func todos remaing # ✅ -->
             <div id="todos-count" class="col-8">
               0 todos remaining
             </div>
@@ -64,16 +69,77 @@
       <!-- !SECTION -->
     </div>
   </header>
-  <main>
-  
-  
+  <!-- SECTION QUOTE -->
+  <main class="position-relative main-ui d-none" style="min-height: 60vh;">
+    <div class="position-absolute bottom-0 w-75 mb-5">
+      <div class="container">
+        <div id="quote" class="row text-light justify-content-end text-center quote">
+          <!-- STUB QUOTE HTML -->
+          <div>
+            <h6 class="fs-5">"You can't shake hands with a clenched fist"</h6>
+          </div>
+          <div class="col-5 text-start ps-5">
+            <h6 class="fs-5 quote-author">- Indira Ghandi</h6>
+          
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+  <!-- SECTION SETTINGS CARD -->
+  <section class="container settings-container position-relative"> 
+    <div class="row settings-row">
+      <div class="bg-secondary settings-box">
+        <div class="user-image">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- !SECTION -->
 
-  <footer class="text-bg-dark">
-    <div class="text-center">
-      <div class="ms-auto" id="authstate"></div>
+  <!-- SECTION BOTTOM UI -->
+  <footer class="container rounded-pill badges mb-5 text-light main-ui">
+    <div class="row py-2 px-4 align-items-center justify-content-between">
+      <!-- TODO WEATHER BADGE/STUB -->
+      <div class="col-3 col-md-2 col-xl-1 ms-md-3 badge bg-black border border-light rounded">
+        <div id="weather" class="row align-items-center">
+          <!-- STUB FOR WEATHER BADGE -->
+          <div class="col-6">
+            <p id="temperature" class="mb-1 pt-1">26&deg;C</p>
+            <p class="mb-0 pb-1">Cloudy</p>
+          </div>
+          <div class="col-6">
+            <i class="mdi mdi-white-balance-sunny fs-1"></i>
+          </div>
+        </div>
+      </div>
+      <!-- TODO CLOCK BADGE/STUB -->
+      <div class="col-5 text-end ms-md-5 ms-xl-0">
+        <!-- STUB CLOCK -->
+        <h1 id="clock" class="display-4 fw-bolder clock">09:28am</h1>
+      </div>
+      <!-- TODO GREETING & LOGIN BADGE -->
+      <div class="col-4 col-md-3 text-end me-0">
+        <div class="row align-items-center justify-content-between">
+          <!-- <div id="greeting" class="col-5">
+            
+            <p class="mb-0">Bonjour,</p>
+            <p class="mb-0">EarlDibbles</p>
+          </div> -->
+          <div class="col-9">
+            <div class="ms-auto" id="authstate"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
+  <!-- !SECTION -->
+  
+  <!-- <footer class="text-bg-dark mb 4">
+    <div class="text-center">
+    </div>
+  </footer> -->
 
   <!-- SECTION links for bootstrap, axios, and auth -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

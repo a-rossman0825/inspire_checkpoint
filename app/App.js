@@ -3,7 +3,7 @@ import { TodosController } from "./controllers/TodosController.js";
 
 class App {
 
-  authcontroller = new AuthController();
+  authController = new AuthController();
 
   todosController = new TodosController();
 

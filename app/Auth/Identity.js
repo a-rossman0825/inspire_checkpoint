@@ -6,4 +6,6 @@ export class Identity {
     this.picture = data.picture
     this.nickname = data.nickname
   }
+
+
 }

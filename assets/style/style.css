@@ -27,8 +27,35 @@ main {
   border-radius: 10px;
 }
 
+.clock {
+  letter-spacing: .15ch;
+  text-shadow: 0 2px 3px black;
+}
 
+.quote-author {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  text-shadow: 0 2px 2px black;
+  color: whitesmoke;
+}
 
+.quote:hover .quote-author {
+  opacity: 1;
+}
+
+.settings-row {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.settings-box {
+  width: 40dvw;
+  height: 40dvh;
+  border-radius: 30px;
+  position: relative;
+}
 
 
 
