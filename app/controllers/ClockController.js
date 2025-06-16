@@ -7,6 +7,7 @@ export class ClockController {
     const updateTime = this.updateTime;
     setInterval(updateTime, 60000);
     this.updateTime();
+    AppState.on('clockSet', this.updateTime);
   }
 
   updateTime() {
@@ -23,6 +24,23 @@ export class ClockController {
       } else {
         clockElm.innerText = `${hour}:${minutes}am`;
       }
+    }
+  }
+
+  changeClockSet(disp) {
+    clockService.changeClockSet(disp);
+    let standardElm = document.getElementById('standard-btn');
+    let militaryElm = document.getElementById('military-btn');
+    if (AppState.clockSet == 'standard') {
+      standardElm.classList.remove('bg-dark', 'text-secondary');
+      standardElm.classList.add('bg-light', 'text-black');
+      militaryElm.classList.add('bg-dark', 'text-secondary');
+      militaryElm.classList.remove('bg-light', 'text-black');
+    } else {
+      standardElm.classList.add('bg-dark', 'text-secondary');
+      standardElm.classList.remove('bg-light', 'text-black');
+      militaryElm.classList.remove('bg-dark', 'text-secondary');
+      militaryElm.classList.add('bg-light', 'text-black');
     }
   }
 }

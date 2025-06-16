@@ -11,6 +11,14 @@ class ClockService {
     AppState.minutes = minutes;
   }
 
+  changeClockSet(disp) {
+    if (disp == 'standard') {
+      AppState.clockSet = 'standard';
+    } else {
+      AppState.clockSet = 'military';
+    }
+  }
+
 }
 
 export const clockService = new ClockService();
