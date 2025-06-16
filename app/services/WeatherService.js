@@ -12,6 +12,19 @@ class WeatherService {
         console.log('🌡️🦮 Temp in K', temp);
   }
 
+  toggleWeather(scale) {
+    if (scale == 'c') {
+      AppState.tempSet = 'c';
+    } else if (scale == 'f'){
+      AppState.tempSet = 'f';
+    } else if (scale == 'toggle'){
+      if (AppState.tempSet == 'c') {
+        AppState.tempSet = 'f';
+      } else {
+        AppState.tempSet = 'c';
+      }
+    }
+  }
 
 }
 

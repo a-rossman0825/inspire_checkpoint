@@ -18,7 +18,7 @@ class ObservableAppState extends EventEmitter {
 
   temp = 0;
 
-  temperatureSet = 'c';
+  tempSet = 'c';
   clockSet = 'standard';
 
 
