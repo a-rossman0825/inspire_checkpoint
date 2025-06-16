@@ -17,9 +17,10 @@ export class ClockController {
     clockService.updateTime();
     const clockElm = document.getElementById('clock');
     const hours = AppState.hours;
+    const militaryHours = AppState.hours >= 10 ? hours : hours.toString().padStart(2, '0');
     const minutes = AppState.minutes.toString().padStart(2, '0');
     if (AppState.clockSet == 'military') {
-      clockElm.innerText = `${hours}:${minutes}`;
+      clockElm.innerText = `${militaryHours}:${minutes}`;
     } else {
       const hour = hours % 12 || 12;
       if (hours >= 12) {
