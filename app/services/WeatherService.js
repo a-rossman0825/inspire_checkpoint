@@ -7,10 +7,10 @@ class WeatherService {
 
   async getTemp() {
     const res = await api.get('api/weather');
-        console.log('🌡️🦮got temp!', res.data);
+        // console.log('🌡️🦮got temp!', res.data);
         let temp = res.data.main.temp;
         AppState.temp = temp;
-        console.log('🌡️🦮 Temp in K', temp);
+        // console.log('🌡️🦮 Temp in K', temp);
   }
 
   toggleWeather(scale) {

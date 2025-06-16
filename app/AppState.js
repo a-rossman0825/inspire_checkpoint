@@ -18,6 +18,9 @@ class ObservableAppState extends EventEmitter {
 
   greetingIndex = 0;
 
+  quote = '';
+  author = '';
+
   temp = 0;
 
   hours = 0;
