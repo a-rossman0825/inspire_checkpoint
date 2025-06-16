@@ -10,7 +10,7 @@ function drawUser() {
   const userAvatar = avatarTemplate(user)
   const button = authButton(user)
   const template = /* html */ `
-  <div class="d-flex">
+  <div class="d-flex align-items-center gap-2">
     ${userAvatar}
     ${button}
   <div>
@@ -73,8 +73,8 @@ function avatarTemplate(account) {
   
     ? /* html */ `
       <div id="greeting" class="col-12">
-        <p class="mb-0">${newLanguage}</p>
-        <p class="mb-0">${account.nickname || account.name}</p>
+        <em class="mb-0 small">${newLanguage}</em>
+        <p class="mb-0 fw-bold">${account.nickname || account.name}</p>
       </div>
       <div>
         <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">

@@ -55,9 +55,10 @@ main {
 }
 
 .settings-box {
-  width: 40dvw;
-  height: 50dvh;
+  min-width: 40dvw;
+  min-height: 50dvh;
   border-radius: 30px;
+  padding: 1.5em;
   position: relative;
   background-color: rgba(0, 0, 0, 0.223);
   backdrop-filter: blur(10px);
@@ -65,7 +66,7 @@ main {
 }
 
 .settings-img {
-  position: fixed; 
+  position: absolute; 
   width: 20dvh; 
   height: 20dvh; 
   top: -5%; 
@@ -74,10 +75,11 @@ main {
 }
 
 .settings-text {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 2em;
+  /* position: fixed; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
 }
 
 .badge-hover:hover {
