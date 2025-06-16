@@ -21,9 +21,11 @@ export class QuotesController {
     drawQuote() {
       const quoteElm = document.getElementById('quote');
       const authorElm = document.getElementById('author');
+      const authSetElm = document.getElementById('author-display');
       let quote = `"${AppState.quote}"`;
       let author = AppState.author;
       quoteElm.innerText = quote;
       authorElm.innerText = author;
+      authSetElm.innerText = author;
     }
 }

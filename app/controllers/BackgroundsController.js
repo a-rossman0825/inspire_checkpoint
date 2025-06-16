@@ -27,6 +27,6 @@ export class BackgroundsController {
     const imgDescElm = document.getElementById('img-desc');
     bodyElm.style.backgroundImage = `url(${bgImg})`;
     artistElm.innerText = `${artist}`;
-    imgDescElm.innerText = `${imgDesc}`;
+    imgDescElm.innerText = imgDesc == null ? imgDesc : 'No description';
   }
 }
