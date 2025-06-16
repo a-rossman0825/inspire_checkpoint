@@ -1,4 +1,5 @@
 import { AuthController } from "./Auth/AuthController.js"
+import { BackgroundsController } from "./controllers/BackgroundsController.js";
 import { ClockController } from "./controllers/ClockController.js";
 import { SettingsController } from "./controllers/SettingsController.js";
 import { TodosController } from "./controllers/TodosController.js";
@@ -11,6 +12,7 @@ class App {
   weatherController = new WeatherController();
   settingsController = new SettingsController();
   clockController = new ClockController();
+  backgroundsController = new BackgroundsController();
 }
 
 window['app'] = new App()

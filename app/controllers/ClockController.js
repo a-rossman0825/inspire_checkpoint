@@ -8,6 +8,9 @@ export class ClockController {
     setInterval(updateTime, 60000);
     this.updateTime();
     AppState.on('clockSet', this.updateTime);
+    AppState.on('clockSet', this.drawClockbtns);
+    this.drawClockbtns();
+    
   }
 
   updateTime() {
@@ -29,6 +32,9 @@ export class ClockController {
 
   changeClockSet(disp) {
     clockService.changeClockSet(disp);
+  }
+
+  drawClockbtns() {
     let standardElm = document.getElementById('standard-btn');
     let militaryElm = document.getElementById('military-btn');
     if (AppState.clockSet == 'standard') {
@@ -43,4 +49,6 @@ export class ClockController {
       militaryElm.classList.add('bg-light', 'text-black');
     }
   }
+
+  
 }

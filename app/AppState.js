@@ -2,9 +2,14 @@ import { Identity } from './Auth/Identity.js';
 import { Todo } from './models/Todo.js';
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
+import { loadState } from './utils/Store.js';
 
 class ObservableAppState extends EventEmitter {
   
+  // NOTE saved settings vars 
+  tempSet = loadState('tempSet') || 'c';
+  clockSet = loadState('clockSet') || 'standard';
+
   // NOTE base vars 
   /** @type {Identity} */
   identity = null;
@@ -18,20 +23,15 @@ class ObservableAppState extends EventEmitter {
   hours = 0;
   minutes = 0;
 
+  bgImage = '';
+  bgArtist = '';
+  bgDesc = '';
+
   // NOTE base Arrs/models 
   /** @type {Todo[]} */
   todos = [];
 
   greetingsArr = ['Bonjour', 'Hola', 'GutenTag', 'Ciao', 'Hey There', 'Ni Hao', 'Konnichiwa', 'Marhaban'];
-
-
-
-  // NOTE settings vars 
-  tempSet = 'c';
-
-  clockSet = 'standard';
-
-
 
 }
 

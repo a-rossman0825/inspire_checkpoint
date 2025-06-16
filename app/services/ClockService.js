@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { saveState } from "../utils/Store.js";
 
 
 class ClockService {
@@ -17,6 +18,7 @@ class ClockService {
     } else {
       AppState.clockSet = 'military';
     }
+    saveState('clockSet', AppState.clockSet);
   }
 
 }

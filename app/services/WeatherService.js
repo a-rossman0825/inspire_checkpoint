@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { api } from "../utils/Axios.js";
+import { saveState } from "../utils/Store.js";
 
 
 class WeatherService {
@@ -24,6 +25,7 @@ class WeatherService {
         AppState.tempSet = 'c';
       }
     }
+    saveState('tempSet', AppState.tempSet);
   }
 
 }
