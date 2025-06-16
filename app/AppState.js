@@ -4,22 +4,33 @@ import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
 class ObservableAppState extends EventEmitter {
-
+  
+  // NOTE base vars 
   /** @type {Identity} */
   identity = null;
 
-  /** @type {Todo[]} */
-  todos = [];
-
   completedTodo = null;
 
-  greetingsArr = ['Bonjour', 'Hola', 'GutenTag', 'Ciao', 'Hey There', 'Ni Hao', 'Konnichiwa', 'Marhaban'];
   greetingIndex = 0;
 
   temp = 0;
 
+  hours = 0;
+  minutes = 0;
+
+  // NOTE base Arrs/models 
+  /** @type {Todo[]} */
+  todos = [];
+
+  greetingsArr = ['Bonjour', 'Hola', 'GutenTag', 'Ciao', 'Hey There', 'Ni Hao', 'Konnichiwa', 'Marhaban'];
+
+
+
+  // NOTE settings vars 
   tempSet = 'c';
+
   clockSet = 'standard';
+
 
 
 }
