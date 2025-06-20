@@ -10,7 +10,7 @@ class ObservableAppState extends EventEmitter {
   tempSet = loadState('tempSet') || 'c';
   clockSet = loadState('clockSet') || 'standard';
 
-  // NOTE base vars 
+  // NOTE base vars
   /** @type {Identity} */
   identity = null;
 

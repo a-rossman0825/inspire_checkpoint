@@ -1,14 +1,28 @@
 inspire_checkpoint
 ============
 
-## Legal Overview
+# Overview
 
-The content under the CodeWorks®, LLC Organization and all of the individual repos are solely intended for use by CodeWorks Instruction to deliver Educational content to CodeWorks Students.
+## Landing Page
 
----
+[Inspire Landing Page](./assets/img/landing-screenshot.png)
 
-## Copyright
+Inspire Zen is a macOS inspired UI that gives the user a uniquely "zen-like" 
+experience.
 
-© CodeWorks® LLC, 2021. Unauthorized use and/or duplication of this material without express and written permission from CodeWorks, LLC is strictly prohibited.
+### Features
+ * A built in Todo list tab in which the user can create a todo, mark it
+      finished, and delete it (all saved to their auth0 account through an api).
+ * A random "zen" background image that changes on refresh.
+ * A random motivational quote that changes on refresh.
+ * A local weather forecast display and clock.
+ * An Auth0 sign up/login for User's to save their todo's to the api.
+ * A settings page where user's can change their location, temperature from 
+      Celsius to Fahrenheit, the Clock from standard to military, all locally
+      saved and stored, and loaded on start up.
+  
 
-<img src="https://bcw.blob.core.windows.net/public/img/7815839041305055" width="125">
+  ## Settings Page
+
+  [Inspire Settings Page](./assets/img/settings-screenshot.png)
+ 
